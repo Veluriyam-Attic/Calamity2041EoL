@@ -1,0 +1,5 @@
+displayName = Calamity:2.0.4.1 Empress of Light
+author = Orignal Calamity Dev Team & YuBell
+version = 1.0.0.0
+side = Both
+modReferences = CalRD

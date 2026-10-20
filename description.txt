@@ -1,0 +1,5 @@
+This Mod ported the AI of Empress of Light of Calamity v2.0.4.1 to Calamity Mod Classic 1.4.5.7
+This mod didn't changed any other things,only the AI of Empress of Light
+
+Warning!
+If this presents any legal issues, please contact me on Discord
