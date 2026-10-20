@@ -4,8 +4,13 @@ public partial class Eol_2041_Modify : GlobalNPC
 {
     public override void Load()
     {
+        // 提前反射一些东西存起来节省性能
+        LoadReflections();
+
         // 光女专家接触倍率、接触伤害表、弹幕伤害表修改，哪个傻逼给设的internal
         Fuck_NPCStats_BossStats();
+        // 动态伤害减免
+        Fuck_TDR();
     }
 
     #region 光女专家接触倍率、接触伤害表、弹幕伤害表修改
@@ -35,6 +40,23 @@ public partial class Eol_2041_Modify : GlobalNPC
         FieldInfo_ExpertDamageMultiplier.SetValue(Type_BossStats, ExpertDamageMultiplier);
         FieldInfo_ContactDamageValues.SetValue(Type_BossStats, ContactDamageValues);
         FieldInfo_ProjectileDamageValues.SetValue(Type_BossStats, ProjectileDamageValues);
+    }
+    #endregion
+
+    #region 动态伤害减免
+    private static void Fuck_TDR()
+    {
+        CalRD.CalRD.bossKillTimes.Add(NPCID.HallowBoss, 10800);
+        CalRD.CalRD.DRValues.Add(NPCID.HallowBoss, 0.15f);
+    }
+    #endregion
+
+    #region 提前反射一些东西存起来节省性能
+    private void LoadReflections()
+    {
+        Type Type_CalamityGlobalNPC = typeof(CalamityGlobalNPC);
+        MethodInfo MethodInfo_DefaultDRMath = Type_CalamityGlobalNPC.GetMethod("DefaultDRMath", BindingFlags.Public | BindingFlags.NonPublic);
+        DefaultDRMath = MethodInfo_DefaultDRMath;
     }
     #endregion
 }

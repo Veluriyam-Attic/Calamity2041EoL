@@ -7,3 +7,4 @@ global using CalRD;
 global using System.Collections.Generic;
 global using System.Reflection;
 global using CalRD.Events;
+global using CalRD.NPCs;
