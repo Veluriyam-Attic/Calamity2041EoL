@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.10.12306.391 oobstable
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calamity2041EoL", "Calamity2041EoL.csproj", "{FD5C0622-F8B5-012D-22E6-9058C5496B4A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD5C0622-F8B5-012D-22E6-9058C5496B4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD5C0622-F8B5-012D-22E6-9058C5496B4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD5C0622-F8B5-012D-22E6-9058C5496B4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD5C0622-F8B5-012D-22E6-9058C5496B4A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3A60D0D0-5686-4553-86CD-E0EFA2C1BE0D}
+	EndGlobalSection
+EndGlobal
