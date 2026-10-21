@@ -8,3 +8,6 @@ global using System.Collections.Generic;
 global using System.Reflection;
 global using CalRD.Events;
 global using CalRD.NPCs;
+global using CalRD.Buffs.DamageOverTime;
+global using Calamity2041EoL.PartialGlobalNPC;
+global using Terraria.GameContent.ItemDropRules;

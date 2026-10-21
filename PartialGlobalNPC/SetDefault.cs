@@ -1,6 +1,6 @@
-﻿namespace Calamity2041EoL;
+﻿namespace Calamity2041EoL.PartialGlobalNPC;
 
-public partial class Eol_2041_Modify : GlobalNPC
+public partial class GlobalNPC_2041 : GlobalNPC
 {
     public override void SetDefaults(NPC npc)
     {
@@ -23,5 +23,11 @@ public partial class Eol_2041_Modify : GlobalNPC
         // 接触伤害
         npc.GetNPCDamage();
         npc.defDamage = npc.damage;
+
+        // 免疫Buff喵
+        npc.buffImmune[BuffID.OnFire] = true;
+        npc.buffImmune[BuffID.OnFire3] = true;
+        npc.buffImmune[ModContent.BuffType<HolyFlames>()] = true;
+        npc.buffImmune[ModContent.BuffType<Nightwither>()] = true;
     }
 }
