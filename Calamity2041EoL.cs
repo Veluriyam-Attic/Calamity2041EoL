@@ -2,5 +2,4 @@
 
 public class Calamity2041EoL : Mod
 {
-
 }

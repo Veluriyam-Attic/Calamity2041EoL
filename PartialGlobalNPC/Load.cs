@@ -36,6 +36,9 @@ public partial class GlobalNPC_2041 : GlobalNPC
             231 // 347 during charge
             ]);
         ProjectileDamageValues.Add(new Tuple<int, int>(NPCID.HallowBoss, ProjectileID.HallowBossRainbowStreak), [100, 152, 172, 192, 300]);
+        ProjectileDamageValues.Add(new Tuple<int, int>(NPCID.HallowBoss, ProjectileID.FairyQueenSunDance), [120, 180, 204, 228, 360]);
+        ProjectileDamageValues.Add(new Tuple<int, int>(NPCID.HallowBoss, ProjectileID.HallowBossLastingRainbow), [100, 152, 172, 192, 300]);
+        ProjectileDamageValues.Add(new Tuple<int, int>(NPCID.HallowBoss, ProjectileID.FairyQueenLance), [130, 196, 216, 236, 390]);
 
         FieldInfo_ExpertDamageMultiplier.SetValue(Type_BossStats, ExpertDamageMultiplier);
         FieldInfo_ContactDamageValues.SetValue(Type_BossStats, ContactDamageValues);
@@ -55,7 +58,7 @@ public partial class GlobalNPC_2041 : GlobalNPC
     private void LoadReflections()
     {
         Type Type_CalamityGlobalNPC = typeof(CalamityGlobalNPC);
-        MethodInfo MethodInfo_DefaultDRMath = Type_CalamityGlobalNPC.GetMethod("DefaultDRMath", BindingFlags.Public | BindingFlags.NonPublic);
+        MethodInfo MethodInfo_DefaultDRMath = Type_CalamityGlobalNPC.GetMethod("DefaultDRMath", BindingFlags.Instance | BindingFlags.NonPublic);
         DefaultDRMath = MethodInfo_DefaultDRMath;
     }
     #endregion
