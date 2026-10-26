@@ -1,9 +1,11 @@
-using Terraria.Localization;
+﻿using Terraria.Localization;
 
 namespace Calamity2041EoL.ItemModify;
 
 public class EoLItems : GlobalItem
 {
+    public override bool InstancePerEntity => true;
+
     public override void SetDefaults(Item item)
     {
         switch (item.type)
