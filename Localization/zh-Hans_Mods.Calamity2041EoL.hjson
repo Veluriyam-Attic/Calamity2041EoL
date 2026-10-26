@@ -1,4 +1,4 @@
-Configs: {
+﻿Configs: {
 	EoLConfig: {
 		DisplayName: 光之女皇配置
 
@@ -30,6 +30,6 @@ Items: {
 }
 
 ItemTooltip: {
-	SoaringFlight: 飞行时间增加 25%
-	SoaringMovement: 移动和跳跃速度增加 10%，加速度增加 1.1 倍
+	SoaringFlight: 「2.0.4.1 效果」飞行时间增加 25%
+	SoaringMovement: 「2.0.4.1 效果」移动和跳跃速度增加 10%，加速度增加 1.1 倍
 }

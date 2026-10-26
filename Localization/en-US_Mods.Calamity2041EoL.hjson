@@ -1,4 +1,4 @@
-Configs: {
+﻿Configs: {
 	EoLConfig: {
 		DisplayName: Empress of Light Config
 
@@ -30,6 +30,6 @@ Items: {
 }
 
 ItemTooltip: {
-	SoaringFlight: Increases wing flight time by 25%
-	SoaringMovement: Increases movement and jump speed by 10% and acceleration by 1.1x
+	SoaringFlight: 「2.0.4.1 Effect」Increases wing flight time by 25%
+	SoaringMovement: 「2.0.4.1 Effect」Increases movement and jump speed by 10% and acceleration by 1.1x
 }
