@@ -1,1 +1,35 @@
+Configs: {
+	EoLConfig: {
+		DisplayName: Empress of Light Config
 
+		FightInBossRush: {
+			Label: Fight in Boss Rush
+			Tooltip: Whether the Empress of Light joins Boss Rush.
+		}
+	}
+}
+
+Items: {
+	LoreEmpressofLight: {
+		DisplayName: Empress of Light (Lore)
+		Tooltip:
+			'''
+			Whispers of the past flow into your ears...
+			Hold SHIFT to listen closely
+			'''
+		Lore:
+			'''
+			Though her title is lofty, she is more an emissary for the powers beyond and forces of nature.
+			In broad daylight, she can channel the Primordial Light itself, making her nigh untouchable.
+			Thankfully, left with only starlight to wield, she falls like any other graceless despot.
+			Her penchant for leeching the strength of other great beings is uniquely deplorable.
+			It made her sickeningly obedient. Dependent, but willingly so as they enabled her to slake her base thirst.
+			I had deigned to slay her myself for her treachery, but she was a notoriously evasive mark.
+			'''
+	}
+}
+
+ItemTooltip: {
+	SoaringFlight: Increases wing flight time by 25%
+	SoaringMovement: Increases movement and jump speed by 10% and acceleration by 1.1x
+}

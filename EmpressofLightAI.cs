@@ -1,9 +1,4 @@
-﻿using Calamity2041EoL;
-using Microsoft.Xna.Framework;
-using Terraria.Audio;
-using Terraria.DataStructures;
-
-namespace CalamityMod.NPCs.VanillaNPCAIOverrides.Bosses
+﻿namespace CalamityMod.NPCs.VanillaNPCAIOverrides.Bosses
 {
     public static class EmpressofLightAI
     {
@@ -34,7 +29,7 @@ namespace CalamityMod.NPCs.VanillaNPCAIOverrides.Bosses
             if (shouldBeInPhase2ButIsStillInPhase1)
                 calamityGlobalNPC.DR = 0.99f;
 
-            bool dayTimeEnrage = NPC.ShouldEmpressBeEnraged();
+            bool dayTimeEnrage = bossRush || NPC.ShouldEmpressBeEnraged();
             if (npc.life == npc.lifeMax && dayTimeEnrage && !npc.AI_120_HallowBoss_IsGenuinelyEnraged())
                 npc.ai[3] += 2f;
 
@@ -1298,7 +1293,7 @@ namespace CalamityMod.NPCs.VanillaNPCAIOverrides.Bosses
             if (shouldBeInPhase2ButIsStillInPhase1)
                 calamityGlobalNPC.DR = 0.99f;
 
-            bool enraged = NPC.ShouldEmpressBeEnraged();
+            bool enraged = BossRushEvent.BossRushActive || NPC.ShouldEmpressBeEnraged();
             if (npc.life == npc.lifeMax && enraged && !npc.AI_120_HallowBoss_IsGenuinelyEnraged())
                 npc.ai[3] += 2f;
 

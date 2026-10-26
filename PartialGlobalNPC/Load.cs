@@ -11,6 +11,7 @@ public partial class GlobalNPC_2041 : GlobalNPC
         Fuck_NPCStats_BossStats();
         // 动态伤害减免
         Fuck_TDR();
+        AddedToBossRush();
     }
 
     #region 光女专家接触倍率、接触伤害表、弹幕伤害表修改
@@ -60,6 +61,16 @@ public partial class GlobalNPC_2041 : GlobalNPC
         Type Type_CalamityGlobalNPC = typeof(CalamityGlobalNPC);
         MethodInfo MethodInfo_DefaultDRMath = Type_CalamityGlobalNPC.GetMethod("DefaultDRMath", BindingFlags.Instance | BindingFlags.NonPublic);
         DefaultDRMath = MethodInfo_DefaultDRMath;
+    }
+    #endregion
+
+    #region 加入到BR列表
+    private void AddedToBossRush()
+    {
+        if (ModContent.GetInstance<EoLConfig>().FightInBossRush)
+        {
+            BossRushEvent.Bosses.Add(new Boss(NPCID.HallowBoss, TimeChangeContext.Night));
+        }
     }
     #endregion
 }

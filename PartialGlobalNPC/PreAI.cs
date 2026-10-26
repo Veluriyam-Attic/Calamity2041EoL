@@ -1,6 +1,4 @@
-﻿using CalamityMod.NPCs.VanillaNPCAIOverrides.Bosses;
-
-namespace Calamity2041EoL.PartialGlobalNPC;
+﻿namespace Calamity2041EoL.PartialGlobalNPC;
 
 public partial class GlobalNPC_2041 : GlobalNPC
 {
@@ -11,6 +9,6 @@ public partial class GlobalNPC_2041 : GlobalNPC
             return EmpressofLightAI.BuffedEmpressofLightAI(npc,Mod);
         }
 
-        return true;
+        return EmpressofLightAI.VanillaEmpressofLightAI(npc, Mod) ;
     } 
 }

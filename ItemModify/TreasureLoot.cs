@@ -2,18 +2,20 @@
 
 public class TreasureLoot : GlobalItem
 {
+    public override bool AppliesToEntity(Item entity, bool lateInstantiation) => entity.type == ItemID.FairyQueenBossBag && lateInstantiation;
+
     public override void ModifyItemLoot(Item item, ItemLoot loot)
     {
         RemoveEmpressRules(loot); // Separately remove EoL's weapons and wings, because they're both included below
         int[] empressItems = new int[]
         {
-                        ItemID.PiercingStarlight, // Starlight
-                        ItemID.FairyQueenRangedItem, // Eventide
-                        ItemID.FairyQueenMagicItem, // Nightglow
-                        ItemID.SparkleGuitar, // Stellar Tune
-                        ItemID.EmpressBlade, // Terraprisma
-                        ItemID.RainbowWhip, // Kaleidoscope
-                        ItemID.RainbowWings, // Empress Wings have a pathetically low drop rate.
+            ItemID.PiercingStarlight, // Starlight
+            ItemID.FairyQueenRangedItem, // Eventide
+            ItemID.FairyQueenMagicItem, // Nightglow
+            ItemID.SparkleGuitar, // Stellar Tune
+            ItemID.EmpressBlade, // Terraprisma
+            ItemID.RainbowWhip, // Kaleidoscope
+            ItemID.RainbowWings, // Empress Wings have a pathetically low drop rate.
         };
         loot.Add(DropHelper.CalamityStyle(DropHelper.BagWeaponDropRateFraction, empressItems));
         loot.AddRevBagAccessories();

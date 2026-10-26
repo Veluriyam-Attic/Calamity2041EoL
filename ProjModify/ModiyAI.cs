@@ -1,6 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-
-namespace Calamity2041EoL.ProjModify;
+﻿namespace Calamity2041EoL.ProjModify;
 
 public class ModiyHallowBossRainbowStreakAI : GlobalProjectile
 {
