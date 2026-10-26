@@ -1,7 +1,37 @@
-namespace Calamity2041EoL;
+﻿namespace Calamity2041EoL;
 
 public class EoLPlayer : ModPlayer
 {
+    public bool reducedNightwitherDamage;
+    public bool reducedHolyFlamesDamage;
+
+    public override void ResetEffects()
+    {
+        reducedNightwitherDamage = false;
+        reducedHolyFlamesDamage = false;
+    }
+
+    // 2.0.4.1：翱翔徽章不再无限飞，改为 +25% 飞行时间。
+    public override void PostUpdateEquips()
+    {
+        if (Player.empressBrooch)
+        {
+            Player.wingTimeMax = (int)(Player.wingTimeMax * 1.25f);
+            Player.moveSpeed += 0.1f;
+            Player.jumpSpeedBoost += 0.5f;
+        }
+    }
+
+    // 月光石/太阳石/天界石/天界壳：对应 DoT 伤害减半。
+    public override void UpdateBadLifeRegen()
+    {
+        CalRD.CalPlayer.CalamityPlayer calamityPlayer = Player.Calamity();
+        if (reducedNightwitherDamage && calamityPlayer.nightwither)
+            Player.lifeRegen += 8;
+        if (reducedHolyFlamesDamage && calamityPlayer.hFlames)
+            Player.lifeRegen += 8;
+    }
+
     // 2.0.4.1：持久彩虹拖尾越靠后伤害越低（40% → 100%）。
     public override void ModifyHitByProjectile(Projectile proj, ref Player.HurtModifiers modifiers)
     {

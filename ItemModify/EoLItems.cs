@@ -1,4 +1,4 @@
-﻿using Terraria.Localization;
+using Terraria.Localization;
 
 namespace Calamity2041EoL.ItemModify;
 
@@ -32,6 +32,23 @@ public class EoLItems : GlobalItem
         }
     }
 
+    public override void UpdateAccessory(Item item, Player player, bool hideVisual)
+    {
+        EoLPlayer mp = player.GetModPlayer<EoLPlayer>();
+
+        if (item.type == ItemID.MoonStone)
+            mp.reducedNightwitherDamage = true;
+
+        if (item.type == ItemID.SunStone)
+            mp.reducedHolyFlamesDamage = true;
+
+        if (item.type == ItemID.CelestialStone || item.type == ItemID.CelestialShell)
+        {
+            mp.reducedNightwitherDamage = true;
+            mp.reducedHolyFlamesDamage = true;
+        }
+    }
+
     public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
     {
         if (item.type != ItemID.EmpressFlightBooster)
@@ -42,14 +59,27 @@ public class EoLItems : GlobalItem
         tooltips.Add(new TooltipLine(Mod, "EoLSoaringMovement",
             Language.GetTextValue("Mods.Calamity2041EoL.ItemTooltip.SoaringMovement")));
     }
-
 }
 
 public class EoLProjectiles : GlobalProjectile
 {
     public override void SetDefaults(Projectile projectile)
     {
-        if (projectile.type == ProjectileID.PiercingStarlight)
-            projectile.Calamity().trueMelee = true;
+        switch (projectile.type)
+        {
+            case ProjectileID.PiercingStarlight:
+                projectile.Calamity().trueMelee = true;
+                break;
+
+            case ProjectileID.EmpressBlade:
+                projectile.usesLocalNPCImmunity = true;
+                projectile.localNPCHitCooldown = 30;
+                break;
+
+            case ProjectileID.FairyQueenRangedItemShot:
+                projectile.penetrate = 7;
+                projectile.extraUpdates = 1;
+                break;
+        }
     }
 }
